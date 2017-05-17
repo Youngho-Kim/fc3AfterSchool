@@ -1,5 +1,7 @@
 package may_17_data_structure;
 
+import sun.reflect.generics.tree.Tree;
+
 /**
  * Created by DoDo on 2017-05-14.
  */
@@ -9,6 +11,35 @@ public class BinaryTree<T> {
     public BinaryTree(){}
     public BinaryTree(T rootData) {
         this.root = new TreeNode<>(rootData);
+    }
+
+
+    public TreeNode<T> searchEmptyNode(TreeNode<T> root){
+        if(root.getLeft() == null){
+            return root;
+        }else if(root.getRight() == null){
+            return root;
+        }else{
+            TreeNode<T> temp = null;
+            if((temp = searchEmptyNode(root.getLeft())) == null){
+                return temp;
+            }else if( (temp = searchEmptyNode(root.getRight())) != null)
+                return temp;
+        }
+        return null;
+    }
+
+    public void addNode(TreeNode<T> node){
+        TreeNode<T> emptyNode = searchEmptyNode(root);
+        if(emptyNode == null)
+            throw new NullPointerException("No node is detected");
+        if(emptyNode.getLeft() == null){
+            emptyNode.setLeft(node);
+            return;
+        }else if(emptyNode.getRight() == null){
+            emptyNode.setRight(node);
+            return;
+        }
     }
 
     public void preOrder(){
