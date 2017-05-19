@@ -8,6 +8,7 @@ import java.lang.reflect.Array;
 public class SolidStack<T> {
     private int top;
     private T[] mData;
+
     private SolidStack(int stackSize){
         mData = (T[]) new Object[stackSize];
         top = -1;
@@ -17,14 +18,21 @@ public class SolidStack<T> {
             top--;
             throw new ArrayIndexOutOfBoundsException("Out of stack boundary");
         }
+        /*
+        * if(mData.length-1<top+1){
+        *   throw new ArrayIndex~
+        * }
+        * top++;
+        *
+        * */
         mData[top] = data;
     }
     public T pop(){
         if(top == -1)
             throw new NullPointerException("No element");
-        T temp = mData[top];
-        top--;
-        return temp;
+        return mData[top--];
+//        return mData[top];
+//        top = top -1;
     }
     public T peak(){
         if(top == -1)

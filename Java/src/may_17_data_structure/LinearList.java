@@ -1,10 +1,13 @@
 package may_17_data_structure;
 
+
+import java.util.LinkedList;
+import java.util.Stack;
+
 /**
  * Created by DoDo on 2017-05-14.
  */
 public class LinearList<T>{
-
     private T[] mData;
 
     public LinearList(T... datas){

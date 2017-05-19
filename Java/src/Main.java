@@ -6,8 +6,8 @@ import may_17_data_structure.StackUsage;
  */
 public class Main {
     public static void main(String[] args){
-        System.out.println("{,}, (,), [,]:" +(int)'{'+","+(int)'}'+(int)'('+","+(int)')'+(int)'['+","+(int)']');
-        System.out.printf("Str: {{()] = %b %n",StackUsage.judgeParenthesis("{{()]"));
+        System.out.println("{,}, (,), [,]:" +(int)'{'+","+(int)'}'+","+(int)'('+","+(int)')'+(int)'['+","+(int)']');
+        System.out.printf("Str: {{(})} = %b %n",StackUsage.judgeParenthesis("{{(})}"));
         System.out.printf("Str: {{()}} = %b %n",StackUsage.judgeParenthesis("{{()}}"));
         System.out.printf("Str: {(())} = %b %n",StackUsage.judgeParenthesis("{(())}"));
         System.out.printf("Str: (((() = %b %n",StackUsage.judgeParenthesis("(((()"));

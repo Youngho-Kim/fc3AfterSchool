@@ -8,23 +8,18 @@ import java.util.Stack;
 public class StackUsage {
     public static boolean judgeParenthesis(String str){
         Stack<Character> stack = new Stack<>();
-        for(Character c :str.toCharArray()){
+        for(char c :str.toCharArray()){
             switch (c){
                 case '(':
                 case '{':
                 case '[':
                     stack.push(c);
                     break;
-                case ')':
-                    if(stack.peek().equals((char)(c-1))){
-                        stack.pop();
-                    }else{
-                        return false;
-                    }
-                    break;
                 case '}':
                 case ']':
-                    if(stack.peek().equals((char)(c-2))){
+                    c = (char) (c -1);
+                case ')':
+                    if(stack.peek().equals((char)(c-1))){
                         stack.pop();
                     }else{
                         return false;
