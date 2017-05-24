@@ -9,7 +9,7 @@
 * #### [Day 2: 기본 자료구조  ](https://github.com/kdh7337/fc3AfterSchool/tree/master/Java/src/may_17_data_structure)
  선형리스트, 연결리스트, 스택, 큐, 트리, 그래프  (2017/05/17/wed)
 
-* #### [Day 3: Sudo 코드]()
+* #### [Day 3: Sudo 코드](https://github.com/kdh7337/fc3AfterSchool/tree/master/Others/Sudo)
 Sudo 코드 (2017/05/19/fri)
 
 * #### [Day 4:객체 지향, 인터페이스의 활용 + 안드로이드 Adpater]()
