@@ -12,5 +12,5 @@
 * #### [Day 3: Sudo 코드](https://github.com/kdh7337/fc3AfterSchool/tree/master/Others/Sudo)
 Sudo 코드 (2017/05/19/fri)
 
-* #### [Day 4:객체 지향, 인터페이스의 활용 + 안드로이드 Adpater]()
-기본 객체지향과 인터페이스의 활용 + 안드로이드 Adpater (2017/05/24/wed)
+* #### [Day 4:안드로이드 Adpater 이론](https://github.com/kdh7337/fc3AfterSchool/tree/master/Android/app/src/main/java/kr/co/fastcampus/android/adapter)
+안드로이드 Adpater (2017/05/24/wed)
