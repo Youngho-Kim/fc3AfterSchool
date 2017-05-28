@@ -16,4 +16,4 @@ Sudo 코드 (2017/05/19/fri)
 안드로이드 Adpater (2017/05/24/wed)
 
 * #### [Day 5:안드로이드 RecyclerView.Adapter 예제](https://github.com/kdh7337/fc3AfterSchool/tree/master/Android/app/src/main/java/kr/co/fastcampus/android/recyclerview)
-안드로이드 Adpater(2017/05/26/fri)
+안드로이드 RecyclerView.Adpater(2017/05/26/fri)
