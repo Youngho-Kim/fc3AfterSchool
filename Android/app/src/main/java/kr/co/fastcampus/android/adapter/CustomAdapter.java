@@ -16,7 +16,8 @@ import kr.co.fastcampus.android.adapter.Data;
 public class CustomAdapter extends BaseAdapter {
 
     List<Data> mDatas;
-    LayoutInflater mInfalter;
+    LayoutInflater mInflater;
+
     public CustomAdapter(List<Data> datas, LayoutInflater inflater) {
       mDatas = datas;
       mInflater = inflater;
