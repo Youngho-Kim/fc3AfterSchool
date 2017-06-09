@@ -1,17 +1,16 @@
-package kr.co.fastcampus.advancedandroid;
+package kr.co.fastcampus.advancedandroid.thread;
 
 import android.graphics.Color;
 import android.graphics.Paint;
-import android.os.Handler;
-import android.os.Message;
 import android.support.annotation.IdRes;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.RadioGroup;
 import android.widget.SeekBar;
-import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+import kr.co.fastcampus.advancedandroid.R;
+
+public class PaintMemo extends AppCompatActivity {
     private Paint currentPaint= new Paint();
     private RadioGroup palette;
     private SeekBar brush;
@@ -43,7 +42,6 @@ public class MainActivity extends AppCompatActivity {
         });
         palette.check(R.id.red);
         brush = (SeekBar) findViewById(R.id.brush);
-        currentPaint.setStrokeWidth(brush.getProgress());
         brush.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
@@ -59,19 +57,7 @@ public class MainActivity extends AppCompatActivity {
             public void onStopTrackingTouch(SeekBar seekBar) {
             }
         });
-    }
-
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                Toast.makeText(MainActivity.this, "뿅", Toast.LENGTH_SHORT).show();
-            }
-        }, 5000);
+        currentPaint.setStrokeWidth(brush.getProgress());
     }
 
     public Paint getCurrentPaint() {
@@ -81,13 +67,5 @@ public class MainActivity extends AppCompatActivity {
     public void setCurrentPaint(Paint currentPaint) {
         this.currentPaint = currentPaint;
     }
-
-
-    Handler handler = new Handler(){
-        @Override
-        public void handleMessage(Message msg) {
-            super.handleMessage(msg);
-        }
-    };
 
 }

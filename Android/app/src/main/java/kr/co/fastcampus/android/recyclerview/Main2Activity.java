@@ -12,10 +12,14 @@ import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 import kr.co.fastcampus.android.R;
@@ -38,10 +42,10 @@ public class Main2Activity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
-
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         recyclerView.setAdapter(new CustomRecyclerViewAdapter(new ArrayList<Data>(),LayoutInflater.from(this)));
         recyclerView.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false));
+        Calendar calendar = Calendar.getInstance();
     }
 
 
@@ -80,7 +84,6 @@ class CustomRecyclerViewAdapter extends RecyclerView.Adapter<CustomRecyclerViewA
     class ViewHolder extends RecyclerView.ViewHolder{
         ImageView img1,img2;
         TextView txt1,txt2;
-
         public ViewHolder(View v) {
             super(v);
             img1 = (ImageView) v.findViewById(R.id.img1);

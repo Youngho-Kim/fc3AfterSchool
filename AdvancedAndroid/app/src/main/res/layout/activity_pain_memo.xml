@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="kr.co.fastcampus.advancedandroid.PaintMemo">
+    tools:context="kr.co.fastcampus.advancedandroid.thread.PaintMemo">
 
     <RadioGroup
         android:id="@+id/palette"
@@ -43,7 +43,7 @@
         android:progress="10"
         android:max="100"/>
 
-    <kr.co.fastcampus.advancedandroid.CanvasView
+    <kr.co.fastcampus.advancedandroid.thread.CanvasView
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"/>
