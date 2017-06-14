@@ -5,11 +5,14 @@ import android.content.CursorLoader;
 import android.content.Loader;
 import android.database.ContentObserver;
 import android.database.Cursor;
+import android.database.DataSetObserver;
+import android.database.DatabaseUtils;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.net.Uri;
 import android.os.Handler;
+import android.provider.MediaStore;
 import android.support.v4.app.LoaderManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -25,32 +28,21 @@ public class DBActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_db);
-        MySQLiteHelper mySQLiteHelper = new MySQLiteHelper(this,"database.db",null,1);
-        db = mySQLiteHelper.getWritableDatabase();
-        Cursor cursor = db.query("sample_table",new String[]{"col1","col2"},null,null,null,null,null);
-        cursor.registerContentObserver(new ContentObserver(mHandler) {
-            @Override
-            public boolean deliverSelfNotifications() {
-                return super.deliverSelfNotifications();
-            }
-
-            @Override
-            public void onChange(boolean selfChange) {
-                super.onChange(selfChange);
-            }
-
-            @Override
-            public void onChange(boolean selfChange, Uri uri) {
-                super.onChange(selfChange, uri);
-                Log.d("DBActivity",uri.toString());
-            }
-        });
-        ContentValues contentValues = new ContentValues();
-        contentValues.put("col1",1);
-        contentValues.put("col2",2);
-        contentValues.put("col3",3);
-        contentValues.put("NUMERIC",4);
-        db.insert("sample_table",null,contentValues);
+//        MySecondSQLiteHelper mySQLiteHelper = MySecondSQLiteHelper.getInstance(this);
+//        db = mySQLiteHelper.getWritableDatabase();
+//        Cursor cursor = db.query("sample_table",new String[]{"col1","col2"},null,null,null,null,null);
+//        db.beginTransaction();
+//        ContentValues contentValues = new ContentValues();
+//        contentValues.put("col1",1);
+//        contentValues.put("col2",2);
+//        contentValues.put("col3",3);
+//        contentValues.put("NUMERIC",4);
+//        db.insert("sample_table",null,contentValues);
+//        contentValues.clear();
+//        contentValues.put("NUMERIC","10");
+//        db.update("sample_table",contentValues,"col1 = 1",null);
+//        db.setTransactionSuccessful();
+//        db.endTransaction();
     }
 
 

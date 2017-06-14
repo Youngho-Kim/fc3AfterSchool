@@ -10,14 +10,12 @@ import com.facebook.stetho.Stetho;
  */
 
 public class AdvancedAndroid extends Application {
+
     @Override
     public void onCreate() {
         super.onCreate();
-        Log.e(AdvancedAndroid.class.getSimpleName(),"app initialize, BuildConfig: "+
-                (BuildConfig.DEBUG));
 
         if(BuildConfig.DEBUG){
-            Log.e(AdvancedAndroid.class.getSimpleName(),"Stetho initialize");
             Stetho.initializeWithDefaults(this);
         }
     }

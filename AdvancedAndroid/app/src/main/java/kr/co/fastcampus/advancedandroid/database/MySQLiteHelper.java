@@ -28,16 +28,25 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
     private final String TAG = MySQLiteHelper.class.getSimpleName();
 
 
+    private static MySQLiteHelper instance = null;
+
+    public static MySQLiteHelper getInstance(){
+        if(instance == null) {
+//            instance = new MySQLiteHelper();
+        }
+        return instance;
+    }
+
 
     //SQLiteOpenHelper는 생성자, onCreate onUpgrade에 대한 구현 의무를 가지고 있다.
-    public MySQLiteHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
+    private MySQLiteHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
         this(context, name, factory, version,null);
     }
 
-    public MySQLiteHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version, DatabaseErrorHandler errorHandler) {
+    private MySQLiteHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version, DatabaseErrorHandler errorHandler) {
         this(context, name, factory, version, errorHandler,false);
     }
-    public MySQLiteHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version, DatabaseErrorHandler errorHandler,boolean useDDL) {
+    private MySQLiteHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version, DatabaseErrorHandler errorHandler,boolean useDDL) {
         super(context, name, factory, version, errorHandler);
         UPGRADE_USING_DDL = useDDL;
         SCHEMA_VERSION = version;
@@ -52,7 +61,6 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         setWriteAheadLoggingEnabled(true);
         db.setForeignKeyConstraintsEnabled(true);
     }
-
     //초기 데이터베이스 생성시 호출됨
     @Override
     public void onCreate(SQLiteDatabase db) {
